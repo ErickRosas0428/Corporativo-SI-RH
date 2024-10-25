@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Definición de variables CSS en :root */
+:root {
+    --primary-color: #e90404ea; /* Color primario (rojo) */
+    --secondary-color: #ffffff; /* Color secundario (blanco) */
+    --text-color: #333; /* Color del texto en general */
+    --background-color: rgba(0, 0, 0, 0.4); /* Fondo del carrusel */
+    --hover-color: rgb(48, 48, 48); /* Color de hover para la tarjeta */
+    --card-text-color: #fff; /* Color del texto dentro de las tarjetas */
+    --services-bg-color: #c0c0c041; /* Color de fondo para la sección de servicios */
+    --banner-bg-color: #EAE5DF; /* Color de fondo del banner */
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/********* M E N U **********/
+.navbar {
+    background-color: var(--secondary-color); /* Uso de variable para el fondo del navbar */
+}
+
+.navbar a:hover {
+    color: var(--primary-color); /* Uso de variable para el color de hover en enlaces */
+}
+
+.navbar a {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text-color); /* Uso de variable para el color del texto en enlaces */
+}
+
+.carousel-item {
+    min-height: 400px;
+}
+
+.carousel-caption {
+    bottom: 220px;
+    z-index: 2;
+}
+
+.carousel-caption h5 {
+    font-size: 70px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+
+.carousel-caption p {
+    width: 60%;
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+.carousel-inner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--background-color); /* Uso de variable para el fondo del carrusel */
+    z-index: 1;
+}
+
+.services {
+    padding: 80px 0;
+    background-color: var(--services-bg-color); /* Uso de variable para el fondo de servicios */
+}
+
+/* Estilos comunes para todas las tarjetas */
+.jobs-cards {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.jobs-cards::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.295); /* Fondo semitransparente inicial */
+    z-index: 1;
+    transition: background 0.5s ease; /* Transición suave */
+}
+.jobs-cards:hover::before {
+    background: var(--hover-color); /* Uso de variable para el fondo en hover */
+}
+.jobs-cards .card-body {
+    position: relative;
+    z-index: 2;
+    color: var(--card-text-color); /* Uso de variable para el texto dentro de las tarjetas */
+    transition: color 0.5s ease;
+}
+.jobs-cards .card-title,
+.jobs-cards p {
+    color: var(--card-text-color); /* Uso de variable para el texto de las tarjetas */
+}
+.jobs-cards .btn-primary {
+    z-index: 3;
+    position: relative;
+}
+
+/* Estilos específicos para las diferentes imágenes de fondo */
+.bg-trab1 {
+    background-image: url('../img/Cards.webp');
+}
+.bg-trab2 {
+    background-image: url('../img/Cards.webp');
+}
+.bg-trab3 {
+    background-image: url('../img/Cards.webp');
+}
+.bg-trab4 {
+    background-image: url('../img/Cards.webp');
+}
+.bg-trab5 {
+    background-image: url('../img/Cards.webp');
+}
+.bg-trab6 {
+    background-image: url('../img/Cards.webp');
+}
+.bg-trab7 {
+    background-image: url('../img/Cards.webp');
+}
+.bg-trab8 {
+    background-image: url('../img/Cards.webp');
+}
+
+
+.box-icons i {
+    font-size: 40px;
+}
+
+.box-icons h3 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.product {
+    padding: 80px 0;
+}
+/* TESTIMONIOS */
+.testimonials .container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1.5em;
+}
+
+.testimonials .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.testimonials {
+    padding: 10px 0;
+    background-color: #fff;
+}
+
+.testimonial-item {
+    background: #fff;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonials .container .stars {
+    margin: 10px 0;
+}
+
+.testimonials .container .stars i {
+    color: #ffc107;
+}
+
+.testimonials .container .stars h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.testimonials .container .stars .designation {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .testimonials .container h1 {
+        font-size: 2em;
+    }
+
+    .testimonial-item {
+        padding: 10px;
+    }
+}
+
+.owl-carousel {
+    position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+}
+
+/* Estilo para las flechas */
+.owl-nav {
+    position: absolute;
+    top: 50%; /* Posiciona en el medio verticalmente */
+    width: 100%; /* Ancho completo */
+    display: flex; /* Usa flexbox para centrar */
+    justify-content: space-between; /* Espacia las flechas a los lados */
+    transform: translateY(-50%); /* Centra verticalmente */
+}
+
+/* Estilo para las flechas individuales */
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    border: 1px solid #ddd; /* Borde delgado */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+/* Cambia el color de las flechas al pasar el ratón */
+.owl-nav .owl-prev:hover,
+.owl-nav .owl-next:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+
+@media(max-width: 1024px) {
+    .carousel-item {
+        min-height: 500px;
+    }
+
+    .carousel-item img {
+        height: 500px;
+        width: 100%; 
+        object-fit: cover; 
+    }
+
+    .carousel-caption {
+        bottom: 30px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 30px;
+        margin-top: 0;
+    }
+
+    .carousel-caption p {
+        width: 100%;
+        font-size: 10px;
+    }
+
+    .services {
+        padding: 30px 0;
+    }
+
+    .product {
+        padding: 30px 0 0 0;
+    }
+
+    .banner {
+        margin-bottom: 30px;
+    }
+}
